@@ -1,0 +1,385 @@
+/* General CSS */ 
+
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(rgb(138, 194, 231), rgb(241, 171, 171), rgb(235, 185, 120));
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a:visited {
+    color: black;
+}
+
+.socmed-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.icon {
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    text-decoration: none;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    z-index: 3;
+    transition: border-color 0.5s ease-out;
+}
+
+.icon>img {
+    width: 30px;
+}
+
+#twit-icon:hover, #twit-icon:focus {
+    border-color: rgb(175, 218, 247);
+}
+
+#insta-icon:hover, #insta-icon:focus {
+    border-color: rgb(244, 217, 252);
+}
+
+#tblr-icon:hover, #tblr-icon:focus {
+    border-color: rgb(255, 210, 155);
+}
+
+/* General Animations */
+
+@keyframes fade-from-left {
+    0% {
+        transform: translateX(-2%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Header CSS */
+header {
+    position: sticky;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 40px;
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard syntax */
+    z-index: 4;
+}
+
+#name {
+    font-family: "Sacramento", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 6px;
+}
+
+.header-links>a {
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+
+    position: relative;
+
+    /*  Margin vs. padding determines length of underline animation 
+        since the underline spans the div size. */
+
+    margin: 20px;
+    padding: 10px 20px;
+
+    /* margin: 25px 25px;
+    padding: 5px 15px; */
+    /* -webkit-transition: background-color 0.5s ease; /* For Safari 3.0 to 6.0 */
+    transition: background-color 0.5s ease; /* For modern browsers */   */
+}
+
+.header-links>a:after {
+    /*  Underline animation adapted from Tapajyoti Bose, 
+        code from https://blog.hubspot.com/website/css-underline-on-hover */
+    content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	width: 0;
+	transition: 0.2s;
+}
+
+#header-link-1:hover::after, #header-link-1:focus::after {
+    background: rgb(188, 223, 247);
+    width: 100%;
+}
+
+#header-link-2:hover::after, #header-link-2:focus::after {
+    background: rgb(244, 217, 252);
+    width: 100%;
+}
+
+#header-link-3:hover::after, #header-link-3:focus::after {
+    background: rgb(255, 215, 215);
+    width: 100%;
+}
+
+#header-link-4:hover::after, #header-link-4:focus::after {
+    background: rgb(252, 224, 189);
+    width: 100%;
+}
+
+/* Home CSS */
+
+.splash {
+    width: 100%;
+    height: 100%;
+}
+
+.intro {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+    padding-right: 10%;
+}
+
+#intro-title {
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke: 4px white;
+    padding-left: 10px;
+    margin: 0;
+
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard syntax */
+    z-index: 1;
+}
+
+#intro-description {
+    /* animation: 1s ease-out 0s 1 fade-from-left; */
+    margin-top: 30px;
+    padding: 30px 30px;
+    display: flex;
+    background-color: #ffffff1f;
+    border-radius: 10px;
+}
+
+.divider {
+    background-color: #fff;
+    width: 7px;
+    margin-right: 40px;
+}
+
+#intro-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#intro-content>h3 {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    z-index: 1;
+}
+
+#intro-content>hr {
+    border: 1px solid white;
+    width: 100%;
+    z-index: 1;
+}
+
+#intro-content>p {
+    color: #fff;
+    font-size: 30px;
+    width: 500px;
+    z-index: 1;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 200px rgba(255, 247, 243, 0.9) inset;
+}
+
+#home-img {
+    animation: 2s ease-out 0s 1 fade-from-left;
+    position: absolute;
+    z-index: 2;
+    bottom: 0px;
+    right: 0px;
+    width: 85%;
+}
+
+/* About CSS */ 
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+}
+
+#about-description {
+    /* animation: 1s ease-out 0s 1 fade-from-left; */
+    margin-top: 30px;
+    padding: 30px 30px;
+    padding-right: 40px;
+    display: flex;
+    background-color: #ffffff1f;
+    border-radius: 10px;
+}
+
+#about-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#about-content>h3 {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 45px;
+}
+
+#about-content>hr {
+    border: 1px solid white;
+    width: 100%;
+}
+
+#about-content>p {
+    color: #fff;
+    font-size: 25px;
+    width: 900px;
+    margin: 10px 0px;
+}
+
+#about-content>ul {
+    padding-left: 50px;
+    color: #fff1f1;
+    font-size: 20px;
+}
+
+.pfp-container {
+    animation: 1s ease-out 0s 1 fade-from-left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-right: 7%;
+    justify-content: center;
+    align-content: center;
+}
+
+.pfp-container>.socmed-icons {
+    justify-content: center;
+}
+
+.pfp-container>.socmed-icons>.icon {
+    margin: 0 10px;
+}
+
+
+#pfp {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    border: 7px solid #ffbbbb;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#about-img {
+    /* max-width:100%; */
+    max-height:102%;
+}
+
+/* FAQ CSS */
+
+.faq {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+}
+
+#faq-description {
+    /* animation: 1s ease-out 0s 1 fade-from-left; */
+    margin-top: 30px;
+    padding: 30px 30px;
+    padding-right: 35px;
+    display: flex;
+    background-color: #ffffff1f;
+    border-radius: 10px;
+}
+
+#faq-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#faq-content>h3 {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 40px;
+}
+
+#faq-content>hr {
+    border: 1px solid white;
+    width: 100%;
+}
+
+#faq-content>p {
+    color: #fff;
+    font-size: 22px;
+    width: 900px;
+    margin: 10px 0px;
+    margin-bottom: 20px;
+}
+
+#faq-content>ul {
+    padding-left: 50px;
+    color: #fff1f1;
+    font-size: 20px;
+}
+
+#faq-wrapper {
+    animation: 1s ease-out 0s 1 fade-from-left;
+    width: 100%;
+}
+

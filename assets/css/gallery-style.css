@@ -1,0 +1,190 @@
+/* General CSS */ 
+
+html, body {
+    position: relative;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(rgb(138, 194, 231), rgb(241, 171, 171), rgb(235, 185, 120), rgb(235, 185, 120), rgb(241, 171, 171), rgb(138, 194, 231));
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a:visited {
+    color: black;
+}
+
+/* General Animations */
+
+@keyframes fade-from-bottom {
+    0% {
+        transform: translateY(2%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header CSS */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 40px;
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard syntax */
+    z-index: 4;
+}
+
+#name {
+    font-family: "Sacramento", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 6px;
+}
+
+.header-links>a {
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+
+    position: relative;
+
+    /*  Margin vs. padding determines length of underline animation 
+        since the underline spans the div size. */
+
+    margin: 20px;
+    padding: 10px 20px;
+
+    /* margin: 25px 25px;
+    padding: 5px 15px; */
+    /* -webkit-transition: background-color 0.5s ease; /* For Safari 3.0 to 6.0 */
+    transition: background-color 0.5s ease; /* For modern browsers */   */
+}
+
+.header-links>a:after {
+    /*  Underline animation adapted from Tapajyoti Bose, 
+        code from https://blog.hubspot.com/website/css-underline-on-hover */
+    content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	width: 0;
+	transition: 0.2s;
+}
+
+#header-link-1:hover::after, #header-link-1:focus::after {
+    background: rgb(188, 223, 247);
+    width: 100%;
+}
+
+#header-link-2:hover::after, #header-link-2:focus::after {
+    background: rgb(244, 217, 252);
+    width: 100%;
+}
+
+#header-link-3:hover::after, #header-link-3:focus::after {
+    background: rgb(255, 215, 215);
+    width: 100%;
+}
+
+#header-link-4:hover::after, #header-link-4:focus::after {
+    background: rgb(252, 224, 189);
+    width: 100%;
+}
+
+.splash {
+    width: 100%;
+    height: 100%;
+}
+
+.intro {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+    padding-right: 10%;
+}
+
+#intro-title {
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke: 4px white;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard syntax */
+}
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 200px rgba(255, 247, 243, 0.9) inset;
+}
+
+
+/*  Gallery CSS: 
+    Code adapted from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
+*/
+
+.gallery {
+    animation: 1s ease-out 0s 1 fade-from-bottom;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 16px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.column {
+    flex: 15%;
+    max-width: 20%;
+    padding: 0 16px;
+}
+  
+.column img {
+    margin-top: 32px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
