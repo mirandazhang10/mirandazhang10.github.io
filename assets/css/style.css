@@ -176,6 +176,7 @@ header {
 
 #intro-description {
     /* animation: 1s ease-out 0s 1 fade-from-left; */
+    flex: 1 1 300px;
     margin-top: 30px;
     padding: 30px 30px;
     display: flex;
@@ -184,8 +185,9 @@ header {
 }
 
 .divider {
+    flex-shrink: 0;
     background-color: #fff;
-    width: 7px;
+    width: 6px;
     margin-right: 40px;
 }
 
@@ -211,7 +213,7 @@ header {
 #intro-content>p {
     color: #fff;
     font-size: 30px;
-    width: 500px;
+    width: 65%;
     z-index: 1;
 }
 
@@ -242,6 +244,8 @@ header {
 }
 
 .about-container {
+    /* flex: 1 1 300px; */
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     padding-left: 7%;
@@ -277,7 +281,7 @@ header {
 #about-content>p {
     color: #fff;
     font-size: 25px;
-    width: 900px;
+    width: 95%;
     margin: 10px 0px;
 }
 
@@ -289,10 +293,13 @@ header {
 
 .pfp-container {
     animation: 1s ease-out 0s 1 fade-from-left;
+    flex: 0 5 500px;
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     margin-top: 5%;
-    margin-right: 7%;
+    margin-right: 9%;
+    margin-left: 3%;
     justify-content: center;
     align-content: center;
 }
@@ -339,7 +346,9 @@ header {
 
 #faq-description {
     /* animation: 1s ease-out 0s 1 fade-from-left; */
+    max-width: 90%;
     margin-top: 30px;
+    margin-right: 10%;
     padding: 30px 30px;
     padding-right: 35px;
     display: flex;
@@ -367,7 +376,7 @@ header {
 #faq-content>p {
     color: #fff;
     font-size: 22px;
-    width: 900px;
+    width: 95%;
     margin: 10px 0px;
     margin-bottom: 20px;
 }
@@ -380,6 +389,6 @@ header {
 
 #faq-wrapper {
     animation: 1s ease-out 0s 1 fade-from-left;
-    width: 100%;
+    width: 50%;
 }
 
