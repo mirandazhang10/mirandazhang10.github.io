@@ -171,14 +171,13 @@ header {
 }
   
 .gallery-img {
-    margin-top: 32px;
     vertical-align: middle;
     width: 100%;
 }
 
-.gallery-img:hover {
+/* .gallery-img:hover {
     cursor: pointer;
-}
+} */
 
 .column img {
     /* transition: all 0.5s ease-out; */
@@ -197,6 +196,43 @@ header {
         flex: 100%;
         max-width: 100%;
     }
+}
+
+/* Descriptions */
+.img-wrap {
+    position: relative;
+    margin-top: 32px;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10%;
+    background-color: #000000c4;
+    color:#fff;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+}
+
+.description:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.description>h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.description>h2 {
+    font-size: 1em;
+}
+
+.description> :nth-child(2) {
+    margin-top: 0;
 }
 
 /* Gallery View CSS */

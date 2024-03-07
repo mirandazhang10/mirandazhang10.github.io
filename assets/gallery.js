@@ -6,7 +6,8 @@ function imageOnClick(e) {
 
     if (!viewMode) {
         viewMode = true;
-        imgClicked = e.target.cloneNode(true);
+        var img = e.target.previousSibling.previousSibling; // first previous sibling access line break
+        imgClicked = img.cloneNode(true);
         imgClicked.classList.remove("gallery-img");
         imgClicked.classList.add("clicked-img");
         closeBg.appendChild(imgClicked);
@@ -18,7 +19,8 @@ function imageOnClick(e) {
 
 const galleryView = () => {
     const closeBg = document.getElementById("view-bg");
-    const images = document.getElementsByClassName("gallery-img");
+    // const images = document.getElementsByClassName("gallery-img");
+    const images = document.getElementsByClassName("description");
   
     closeBg.addEventListener("click", (event) => {
       if (viewMode) {
