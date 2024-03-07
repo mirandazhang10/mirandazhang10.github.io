@@ -52,7 +52,7 @@ header {
     padding-right: 40px;
     -webkit-user-select: none; /* Safari */
     user-select: none; /* Standard syntax */
-    z-index: 4;
+    z-index: 1;
 }
 
 #name {
@@ -147,12 +147,48 @@ header {
     width: 100%;
     height: 100%;
     box-shadow: 0 0 200px rgba(255, 247, 243, 0.9) inset;
+    pointer-events: none;
 }
 
 
 /*  Gallery CSS: 
     Code adapted from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
 */
+
+#view-bg {
+    /* display: flex;
+    align-items: center; */
+    object-fit: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: #00000075;
+    transition: visibility 0s, opacity 0.2s ease-out;
+}
+
+.view-bg-none {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.view-bg-clicked {
+    opacity: 1;
+    visibility: visible;
+}
+
+#view-bg:hover {
+    cursor: pointer;
+}
+
+.view-mode {
+    height: 100%;
+    overflow: hidden;
+}
+
+.clicked-img {
+    width: 600px;
+}
 
 .gallery {
     animation: 1s ease-out 0s 1 fade-from-bottom;
@@ -169,10 +205,19 @@ header {
     padding: 0 16px;
 }
   
-.column img {
+.gallery-img {
     margin-top: 32px;
     vertical-align: middle;
     width: 100%;
+}
+
+.gallery-img:hover {
+    cursor: pointer;
+}
+
+.column img {
+    transition: all 0.5s ease-out;
+    pointer-events: auto;
 }
 
 @media screen and (max-width: 800px) {
