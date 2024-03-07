@@ -155,41 +155,6 @@ header {
     Code adapted from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
 */
 
-#view-bg {
-    /* display: flex;
-    align-items: center; */
-    object-fit: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    background-color: #00000075;
-    transition: visibility 0s, opacity 0.2s ease-out;
-}
-
-.view-bg-none {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.view-bg-clicked {
-    opacity: 1;
-    visibility: visible;
-}
-
-#view-bg:hover {
-    cursor: pointer;
-}
-
-.view-mode {
-    height: 100%;
-    overflow: hidden;
-}
-
-.clicked-img {
-    width: 600px;
-}
-
 .gallery {
     animation: 1s ease-out 0s 1 fade-from-bottom;
     display: flex;
@@ -216,7 +181,7 @@ header {
 }
 
 .column img {
-    transition: all 0.5s ease-out;
+    /* transition: all 0.5s ease-out; */
     pointer-events: auto;
 }
 
@@ -232,4 +197,52 @@ header {
         flex: 100%;
         max-width: 100%;
     }
+}
+
+/* Gallery View CSS */
+
+/* Applied to body; view is restricted to the current screen view */ 
+.view-mode {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Transparent background */
+#view-bg {
+    /* display: flex;
+    align-items: center; */
+    /* object-fit: contain; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    background-color: #000000d0;
+    transition: visibility 0s, opacity 0.15s ease-out;
+}
+
+#view-bg:hover {
+    cursor: pointer;
+}
+
+.view-bg-none {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.view-bg-clicked {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Applied to imgs */
+.clicked-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 0 0;
+    height: 100vh;
 }
