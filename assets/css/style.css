@@ -291,6 +291,12 @@ header {
     font-size: 20px;
 }
 
+#flavor-text {
+    font-size: 20px;
+    color: #3f3e3e;
+    padding-bottom: 10px;
+}
+
 .pfp-container {
     animation: 1s ease-out 0s 1 fade-from-left;
     flex: 3 5 500px;

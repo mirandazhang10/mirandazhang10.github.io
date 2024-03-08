@@ -6,7 +6,7 @@ function imageOnClick(e) {
 
     if (!viewMode) {
         viewMode = true;
-        var img = e.target.previousSibling.previousSibling; // first previous sibling access line break
+        var img = e.target.parentNode.children[0];
         imgClicked = img.cloneNode(true);
         imgClicked.classList.remove("gallery-img");
         imgClicked.classList.add("clicked-img");
